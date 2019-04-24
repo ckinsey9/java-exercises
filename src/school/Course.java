@@ -23,4 +23,29 @@ public class Course {
         this.roster = roster;
     }
 
+    public Integer getCourseId() {
+        return this.courseId;
+    }
+
+    public String toString() {
+        return name + ": " + courseId + ", " + department;
+    }
+
+    public boolean equals(Object o) {
+
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+
+        Course theCourse = (Course) o;
+        return theCourse.getCourseId() == getCourseId();
+    }
 }

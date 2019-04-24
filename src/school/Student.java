@@ -56,4 +56,44 @@ public class Student {
                 / getNumberofCredits()+numCredits;
     }
 
+    public void addGrade(int courseCredits, double grade) {
+        // Update the appropriate fields: numberOfCredits, gpa
+        this.setGpa(grade, courseCredits);
+    }
+
+
+    public String toString() {
+        return name + ": " + studentId + ", " + this.getGradeLevel();
+    }
+
+    public String getGradeLevel() {
+        // Determine the grade level of the student based on numberOfCredits
+        if (this.numberOfCredits < 30) {
+            return "Freshman Status";
+        } else if (this.numberOfCredits < 60) {
+            return "Sophomore Status";
+        } else if (this.numberOfCredits < 90) {
+            return "Junior Status";
+        } else {
+            return "Senior Status";
+        }
+    }
+
+    public boolean equals(Object o) {
+
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+
+        Student theStudent = (Student) o;
+        return theStudent.getStudentId() == getStudentId();
+    }
 }
