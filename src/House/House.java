@@ -1,8 +1,7 @@
 package House;
 
-import org.launchcode.java.demos.java4python.Temperature;
 
-public class House {
+public class House extends AbstractEntity {
 
     private String address;
     private double sqfeet;
@@ -12,7 +11,7 @@ public class House {
     private boolean locked = true;
     private double worth;
 
-    public House(){}
+    //public House(){}
     public House(String address, double sqfeet, int
                  numberBedrooms, int numberBathrooms,
                  boolean owned, double worth) {
@@ -22,7 +21,10 @@ public class House {
         this.numberBathrooms = numberBathrooms;
         this.owned = owned;
         this.worth = worth;
+        this.id = nextId;
+        nextId++;
     }
+
 
     private void setAddress(String aAddress) {
         address = aAddress;
@@ -83,13 +85,20 @@ public class House {
     public static void main(String[] args) {
         House home = new House("west", 500, 3, 2,
         false, 5000);
-        System.out.println(home.numberBathrooms);
+        //System.out.println(home.numberBathrooms);
         Condo condo1 = new Condo("west", 500, 3, 2,
                 false, 5000, 500, false);
 
-        System.out.println(condo1.getHoa());
+        Apartment apt = new Apartment("west", 500, 3, 2,
+                false, 5000, 800);
 
-        System.out.println(condo1.getSqfeet());
+        System.out.println(home.id);
+        System.out.println(condo1.id);
+        System.out.println(apt.id);
+
+        //System.out.println(condo1.getHoa());
+
+        //System.out.println(condo1.getSqfeet());
 
 
 
