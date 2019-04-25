@@ -27,10 +27,12 @@ public class Course {
         return this.courseId;
     }
 
+    @Override
     public String toString() {
         return name + ": " + courseId + ", " + department;
     }
 
+    @Override
     public boolean equals(Object o) {
 
         if (o == this) {

@@ -61,7 +61,7 @@ public class Student {
         this.setGpa(grade, courseCredits);
     }
 
-
+    @Override
     public String toString() {
         return name + ": " + studentId + ", " + this.getGradeLevel();
     }
@@ -79,6 +79,7 @@ public class Student {
         }
     }
 
+    @Override
     public boolean equals(Object o) {
 
         if (o == this) {
